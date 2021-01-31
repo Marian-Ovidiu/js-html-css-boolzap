@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>WhatsApp</title>
+  </head>
+  <body>
+    <div class="container" id="root">
+      <div class="slider floatL">
+        <div class="myProfile">
+          <div class="myProfile-left floatL">
+            <img src="img/avatar_io.jpg">
+            <p id="nomeUtente">NOME UTENTE</p>
+          </div>
+          <div class="options floatL">
+            <div class="icons floatR"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></div>
+            <div class="icons floatR"><i class="fa fa-comment" aria-hidden="true"></i></div>
+            <div class="icons floatR"><i class="fa fa-search" aria-hidden="true"></i></div>
+          </div>
+        </div>
+        <div class="activeNotifications">
+          <div class="icon floatL"><i class="fa fa-bell-slash" aria-hidden="true"></i></div>
+          <p id="receive">Ricevi notifiche di nuovi messaggi</p>
+          <p id="active">Attiva notifiche desktop</p>
+        </div>
+        <div class="searchArea">
+          <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+        </div>
+        <div class="UsersChatArea">
+          <div class="box" v-for="(element, i) in contacts">
+            <img v-bind:src="'img/avatar' + element.avatar + '.jpg'" alt="">
+            <p class="names">{{element.name}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="main floatL">
+        <div class="main-header">
+          <div class="main-headerLeft floatL">
+            <img class="floatL" src="img/avatar_1.jpg">
+            <p id="activeName">Michele</p>
+            <p id="lastAccess">Ultimo accesso oggi alle</p>
+          </div>
+          <div class="main-headerRight floatL">
+            <div class="icons floatR"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></div>
+            <div class="icons floatR"><i class="fas fa-paperclip" aria-hidden="true"></i></div>
+            <div class="icons floatR"><i class="fa fa-search" aria-hidden="true"></i></div>
+          </div>
+        </div>
+        <div class="chatArea">
+
+        </div>
+      </div>
+      <div class="bottom floatL">
+        <div class="bottom-icons floatL"><i class="far fa-smile" aria-hidden="true"></i></div>
+        <input id="sendMessage" placeholder="Scrivi un messaggio..." type="text" name="" value="">
+        <div class="bottom-icons floatR"><i class="fas fa-microphone" aria-hidden="true"></i></div>
+      </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="main.js" type="text/javascript">
+
+    </script>
+  </body>
+</html>
