@@ -161,6 +161,33 @@ img  {
   background-image: url('img/mine.jpg');
   overflow-y: scroll;
 }
+.contenitoreMessaggi{
+  width: 100%;
+}
+.mexContainer{
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  position: relative;
+  margin: 15px 30px;
+  background-color: white;
+}
+.mex{
+  padding: 11px 15px;
+  font-size: 15px;
+}
+.received {
+  background-color: #fff;
+  float: left;
+}
+.sent{
+  background-color: #cbe7b5;
+  float: right;
+}
+.clearfix::after{
+  content:"";
+  display: table;
+  clear: both;
+}
 /* FINE MAIN */
 /* css BOTTOM */
 .bottom {

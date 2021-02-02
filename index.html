@@ -33,7 +33,7 @@
           <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
         </div>
         <div class="UsersChatArea">
-          <div class="box" v-for="(element, i) in contacts">
+          <div @click="changeIndex(i)" class="box" v-for="(element, i) in contacts">
             <img v-bind:src="'img/avatar' + element.avatar + '.jpg'" alt="">
             <p class="names">{{element.name}}</p>
           </div>
@@ -53,20 +53,24 @@
           </div>
         </div>
         <div class="chatArea">
-
+          <div v-for="(element, index) in contacts[activeIndex].messages" class="contenitoreMessaggi clearfix">
+            <div :class="'mexContainer ' + element.status">
+              <div class="mex">
+                {{element.text}}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="bottom floatL">
         <div class="bottom-icons floatL"><i class="far fa-smile" aria-hidden="true"></i></div>
-        <input id="sendMessage" placeholder="Scrivi un messaggio..." type="text" name="" value="">
+        <input id="sendMessage" placeholder="Scrivi un messaggio..." v-model="newMessage" @keyup.enter="addMessage(newMessage)">
         <div class="bottom-icons floatR"><i class="fas fa-microphone" aria-hidden="true"></i></div>
       </div>
     </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="main.js" type="text/javascript">
-
-    </script>
+    <script src="main.js" type="text/javascript"></script>
   </body>
 </html>

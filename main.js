@@ -24,10 +24,18 @@ var app = new Vue({
 			    {date: '10/01/2020 15:30:55',	text: 'Lo sai che ha aperto una nuova pizzeria?',	status: 'sent'},
 			    {date: '10/01/2020 15:50:00',	text: 'Si, ma preferirei andare al cinema',	status: 'received'}
 		    ],
-	},
-],
+	    }],
+  activeIndex: 0,
+  newMessage : ''
 },
   methods: {
-
+    changeIndex: function(newIndex){
+      this.activeIndex = newIndex;
+  },
+  addMessage: function(newMessage){
+    obj = {date: '28/03/2020 10:10:40', text: newMessage,	status: 'sent'}
+    index = this.index
+    this.contacts[index].messages.push(obj);
   }
+}
 })
