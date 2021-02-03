@@ -32,10 +32,20 @@ var app = new Vue({
     changeIndex: function(newIndex){
       this.activeIndex = newIndex;
   },
-  addMessage: function(newMessage){
-    obj = {date: '28/03/2020 10:10:40', text: newMessage,	status: 'sent'}
-    index = this.index
-    this.contacts[index].messages.push(obj);
+  autoReply : function(){
+    const reply = {date: '10/01/2020 15:50:00', text: 'Ok',	status: 'received'}
+    this.contacts[this.activeIndex].messages.push(reply);
+
+  },
+  addMessage: function(){
+    const obj = {date: '10/01/2020 15:50:00', text: this.newMessage,	status: 'sent'}
+    this.contacts[this.activeIndex].messages.push(obj);
+    this.newMessage = '';
+
+    let that = this;
+    setTimeout(function() {
+      that.autoReply;
+    }, 1000)
   }
 }
 })

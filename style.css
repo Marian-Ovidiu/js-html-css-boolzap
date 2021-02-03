@@ -168,8 +168,11 @@ img  {
   border: 1px solid lightgray;
   border-radius: 10px;
   position: relative;
-  margin: 15px 30px;
+  margin: 0 30px;
   background-color: white;
+}
+.mexContainer:first-child {
+  margin-top: 20px;
 }
 .mex{
   padding: 11px 15px;
