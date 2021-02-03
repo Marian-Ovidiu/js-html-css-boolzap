@@ -33,7 +33,7 @@
           <input type="text" v-model="searchText" @keyup="filter" placeholder="Cerca o inizia una nuova chat">
         </div>
         <div class="UsersChatArea">
-          <div @click="changeIndex(i)" class="box" v-for="(element, i) in contacts">
+          <div @click="changeIndex(i)" class="box" v-for="(element, i) in contacts" v-if="element.visible">
             <img v-bind:src="'img/avatar' + element.avatar + '.jpg'" alt="">
             <p class="names">{{element.name}}</p>
           </div>
@@ -55,9 +55,7 @@
         <div class="chatArea">
           <div v-for="(element, index) in contacts[activeIndex].messages" class="contenitoreMessaggi clearfix">
             <div :class="'mexContainer ' + element.status">
-              <div class="mex">
-                {{element.text}}
-              </div>
+              <div class="mex">{{element.text}}</div>
             </div>
           </div>
         </div>
