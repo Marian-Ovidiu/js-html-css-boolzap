@@ -30,7 +30,7 @@
           <p id="active">Attiva notifiche desktop</p>
         </div>
         <div class="searchArea">
-          <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+          <input type="text" v-model="searchText" @keyup="filter" placeholder="Cerca o inizia una nuova chat">
         </div>
         <div class="UsersChatArea">
           <div @click="changeIndex(i)" class="box" v-for="(element, i) in contacts">
@@ -42,8 +42,8 @@
       <div class="main floatL">
         <div class="main-header">
           <div class="main-headerLeft floatL">
-            <img class="floatL" src="img/avatar_1.jpg">
-            <p id="activeName">Michele</p>
+            <img class="floatL"  v-bind:src="'img/avatar' + contacts[activeIndex].avatar + '.jpg'">
+            <p id="activeName">{{contacts[activeIndex].name}}</p>
             <p id="lastAccess">Ultimo accesso oggi alle</p>
           </div>
           <div class="main-headerRight floatL">
