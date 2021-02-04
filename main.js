@@ -29,15 +29,16 @@ var app = new Vue({
   newMessage : '',
   searchText: ''
 },
-  methods: {
-    changeIndex: function(newIndex){
+methods: {
+  changeIndex: function(newIndex){
       this.activeIndex = newIndex;
   },
+
   autoReply : function(){
     const reply = {date: '10/01/2020 15:50:00', text: 'Ok',	status: 'received'}
     this.contacts[this.activeIndex].messages.push(reply);
-
   },
+
   addMessage: function(){
     const obj = {date: '10/01/2020 15:50:00', text: this.newMessage,	status: 'sent'}
     this.contacts[this.activeIndex].messages.push(obj);
@@ -48,6 +49,7 @@ var app = new Vue({
       that.autoReply();
     }, 1000)
   },
+
   filter: function(){
     this.contacts.forEach((element) => {
       if(element.name.toLowerCase().includes(this.searchText.toLowerCase())){
@@ -58,7 +60,7 @@ var app = new Vue({
         console.log('sono in false');
       }
     });
-
   }
+
 }
 })

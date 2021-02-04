@@ -42,7 +42,7 @@
       <div class="main floatL">
         <div class="main-header">
           <div class="main-headerLeft floatL">
-            <img class="floatL"  v-bind:src="'img/avatar' + contacts[activeIndex].avatar + '.jpg'">
+            <img class="floatL" v-bind:src="'img/avatar' + contacts[activeIndex].avatar + '.jpg'">
             <p id="activeName">{{contacts[activeIndex].name}}</p>
             <p id="lastAccess">Ultimo accesso oggi alle</p>
           </div>
@@ -61,12 +61,11 @@
         </div>
       </div>
       <div class="bottom floatL">
-        <div class="bottom-icons floatL"><i class="far fa-smile" aria-hidden="true"></i></div>
+        <div class="icons floatL"><i class="far fa-smile" aria-hidden="true"></i></div>
         <input id="sendMessage" placeholder="Scrivi un messaggio..." v-model="newMessage" @keyup.enter="addMessage(newMessage)">
-        <div class="bottom-icons floatR"><i class="fas fa-microphone" aria-hidden="true"></i></div>
+        <div class="icons floatR"><i class="fas fa-microphone" aria-hidden="true"></i></div>
       </div>
     </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="main.js" type="text/javascript"></script>
